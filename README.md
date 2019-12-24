@@ -1,5 +1,5 @@
 # ONVIFCameraControl
-Python module for some basic Onvif camera control actions. List of available functions watch in [code](github.com/MikhaelMIEM/ONVIFCameraControl/ONVIFCameraControl/ONVIFCameraControl.py)
+Python module for some basic Onvif camera control actions. List of available functions watch in [code](https://github.com/MikhaelMIEM/ONVIFCameraControl/blob/master/ONVIFCameraControl/ONVIFCameraControl.py)
 # Installation
 ```sh
 $ python3.7 -m pip install ONVIFCameraControl
