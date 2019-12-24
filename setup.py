@@ -8,7 +8,7 @@ with open("requirements.txt", "r") as file:
 
 setuptools.setup(
     name="ONVIFCameraControl",
-    version="1.0.5",
+    version="1.0.6",
     author="Mikhael",
     author_email="mikhail-miem@yandex.ru",
     description="Simple camera controls.",
