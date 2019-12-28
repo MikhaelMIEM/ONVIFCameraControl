@@ -6,7 +6,7 @@ $ python3.7 -m pip install ONVIFCameraControl
 ```
 # Usage
 ```sh
-from ONVIFCameraControl import ONVIFCameraControl
+from ONVIFCameraControl import ONVIFCameraControl  # import ONVIFCameraControlError to catch errors
 from time import sleep
 
 cam = ONVIFCameraControl(("172.18.200.53", 80), "admin", "password")
