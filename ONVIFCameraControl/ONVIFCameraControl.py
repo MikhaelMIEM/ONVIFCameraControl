@@ -216,7 +216,7 @@ class ONVIFCameraControl:
 
     def move_absolute(self, ptz_position, ptz_velocity=(1.0, 1.0, 1.0)):
         logger.info(f'Absolute move {ptz_position}')
-        req = self.__ptz_service.create_type['AbsoluteMove']
+        req = self.__ptz_service.create_type('AbsoluteMove')
         req.ProfileToken = self.__profile.token
         pos = req.Position
         pos.PanTilt.x, pos.PanTilt.y = ptz_position[0], ptz_position[1]
@@ -228,7 +228,7 @@ class ONVIFCameraControl:
 
     def move_relative(self, ptz_position, ptz_velocity=(1.0, 1.0, 1.0)):
         logger.info(f'Relative move {ptz_position}')
-        req = self.__ptz_service.create_type['RelativeMove']
+        req = self.__ptz_service.create_type('RelativeMove')
         req.ProfileToken = self.__profile.token
         pos = req.Translation
         pos.PanTilt.x, pos.PanTilt.y = ptz_position[0], ptz_position[1]
@@ -247,6 +247,9 @@ class ONVIFCameraControl:
     def stop(self):
         logger.info(f'Stopping movement')
         self.__ptz_service.Stop({'ProfileToken': self.__profile.token})
+                    
+    def get_snapshot_uri(self):
+        return self.__media_service.GetSnapshotUri({'ProfileToken': self.__profile.token})["Uri"]
 
     def __get_move_options(self):
         request = self.__imaging_service.create_type('GetMoveOptions')
